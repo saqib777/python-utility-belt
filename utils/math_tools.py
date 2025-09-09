@@ -23,3 +23,22 @@ def is_prime(n: int) -> bool:
         if n % i == 0:
             return False
     return True
+
+def gcd(a: int, b: int) -> int:
+    """
+    Calculate the Greatest Common Divisor (GCD) of two numbers
+    using the Euclidean algorithm.
+    Example: gcd(12, 8) -> 4
+    """
+    while b:
+        a, b = b, a % b
+    return a
+
+
+def lcm(a: int, b: int) -> int:
+    """
+    Calculate the Least Common Multiple (LCM) of two numbers.
+    Uses gcd(a, b) for calculation.
+    Example: lcm(12, 8) -> 24
+    """
+    return abs(a * b) // gcd(a, b)

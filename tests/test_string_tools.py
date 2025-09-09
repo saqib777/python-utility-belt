@@ -12,5 +12,11 @@ class TestStringTools(unittest.TestCase):
     def test_is_palindrome_false(self):
         self.assertFalse(is_palindrome("hello"))
 
+    def test_count_vowels(self):
+        from utils.string_tools import count_vowels
+        self.assertEqual(count_vowels("hello"), 2)
+        self.assertEqual(count_vowels("sky"), 0)
+
+
 if __name__ == "__main__":
     unittest.main()

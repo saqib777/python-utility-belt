@@ -25,4 +25,9 @@ def count_vowels(s: str) -> int:
     Example: count_vowels("hello") -> 2
     """
     return sum(1 for ch in s.lower() if ch in "aeiou")
+def is_anagram(s1: str, s2: str) -> bool:
+    """Check if two strings are anagrams.
+    Example: is_anagram("listen", "silent") -> True
+    """
+    return sorted(s1.replace(" ", "").lower()) == sorted(s2.replace(" ", "").lower())
 

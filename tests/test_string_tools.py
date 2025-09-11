@@ -17,6 +17,15 @@ class TestStringTools(unittest.TestCase):
         self.assertEqual(count_vowels("hello"), 2)
         self.assertEqual(count_vowels("sky"), 0)
 
+import unittest
+from utils.string_tools import is_anagram
+
+class TestStringTools(unittest.TestCase):
+    def test_is_anagram(self):
+        self.assertTrue(is_anagram("listen", "silent"))
+        self.assertTrue(is_anagram("triangle", "integral"))
+        self.assertFalse(is_anagram("hello", "world"))
+
 
 if __name__ == "__main__":
     unittest.main()

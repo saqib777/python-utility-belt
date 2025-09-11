@@ -42,3 +42,26 @@ def lcm(a: int, b: int) -> int:
     Example: lcm(12, 8) -> 24
     """
     return abs(a * b) // gcd(a, b)
+
+def factorial_iterative(n: int) -> int:
+    """Calculate factorial iteratively.
+    Example: factorial_iterative(5) -> 120
+    """
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative numbers.")
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
+
+
+def factorial_recursive(n: int) -> int:
+    """Calculate factorial recursively.
+    Example: factorial_recursive(5) -> 120
+    """
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative numbers.")
+    if n in (0, 1):
+        return 1
+    return n * factorial_recursive(n - 1)
+

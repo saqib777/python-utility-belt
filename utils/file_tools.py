@@ -34,3 +34,17 @@ def append_to_file(path: str, content: str) -> None:
     """
     with open(path, "a", encoding="utf-8") as f:
         f.write(content)
+
+import csv
+
+def read_csv_file(filename: str) -> list[dict]:
+    """Read a CSV file and return a list of dictionaries.
+    Example: read_csv_file("data.csv") -> [{'name': 'Alice', 'age': '30'}, ...]
+    """
+    try:
+        with open(filename, newline='', encoding='utf-8') as csvfile:
+            reader = csv.DictReader(csvfile)
+            return list(reader)
+    except FileNotFoundError:
+        raise FileNotFoundError(f"File {filename} not found.")
+

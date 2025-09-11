@@ -23,6 +23,23 @@ class TestMathTools(unittest.TestCase):
         from utils.math_tools import lcm
         self.assertEqual(lcm(12, 8), 24)
 
+import unittest
+from utils.math_tools import factorial_iterative, factorial_recursive
+
+class TestMathTools(unittest.TestCase):
+    def test_factorial_iterative(self):
+        self.assertEqual(factorial_iterative(5), 120)
+        self.assertEqual(factorial_iterative(0), 1)
+        with self.assertRaises(ValueError):
+            factorial_iterative(-1)
+
+    def test_factorial_recursive(self):
+        self.assertEqual(factorial_recursive(5), 120)
+        self.assertEqual(factorial_recursive(1), 1)
+        with self.assertRaises(ValueError):
+            factorial_recursive(-3)
+
+
 
 if __name__ == "__main__":
     unittest.main()
